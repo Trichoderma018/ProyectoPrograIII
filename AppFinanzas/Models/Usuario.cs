@@ -9,7 +9,7 @@ namespace AppFinanzas.Models
         {
             ConfiguracionUsuarios = new HashSet<ConfiguracionUsuario>();
             RolesPorUsuarios = new HashSet<RolesPorUsuario>();
-            Tansaccions = new HashSet<Tansaccion>();
+            Tansacciones = new HashSet<Tansaccion>();
         }
 
         public int Id { get; set; }
@@ -19,6 +19,6 @@ namespace AppFinanzas.Models
 
         public virtual ICollection<ConfiguracionUsuario> ConfiguracionUsuarios { get; set; }
         public virtual ICollection<RolesPorUsuario> RolesPorUsuarios { get; set; }
-        public virtual ICollection<Tansaccion> Tansaccions { get; set; }
+        public virtual ICollection<Tansaccion> Tansacciones { get; set; }
     }
 }

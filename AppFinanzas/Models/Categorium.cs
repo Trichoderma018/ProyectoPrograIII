@@ -7,12 +7,12 @@ namespace AppFinanzas.Models
     {
         public Categorium()
         {
-            Tansaccions = new HashSet<Tansaccion>();
+            Tansacciones = new HashSet<Tansaccion>();
         }
 
         public int Id { get; set; }
         public string NombreCategoria { get; set; } = null!;
 
-        public virtual ICollection<Tansaccion> Tansaccions { get; set; }
+        public virtual ICollection<Tansaccion> Tansacciones { get; set; }
     }
 }

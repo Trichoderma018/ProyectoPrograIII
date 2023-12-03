@@ -12,7 +12,7 @@ namespace AppFinanzas.Models
         public double Monto { get; set; }
         public DateTime Fecha { get; set; }
 
-        public virtual Categorium IdCategoriaNavigation { get; set; } = null!;
-        public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
+        public virtual Categorium Categoria { get; set; } = null!;
+        public virtual Usuario Usuario { get; set; } = null!;
     }
 }

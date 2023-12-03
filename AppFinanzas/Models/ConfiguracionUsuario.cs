@@ -10,6 +10,6 @@ namespace AppFinanzas.Models
         public int LimiteGasto { get; set; }
         public bool NotificacionActiva { get; set; }
 
-        public virtual Usuario IdUsuarioNavigation { get; set; } = null!;
+        public virtual Usuario Usuario { get; set; } = null!;
     }
 }
