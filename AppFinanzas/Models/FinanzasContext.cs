@@ -36,7 +36,7 @@ namespace AppFinanzas.Models
             {
                 entity.ToTable("ConfiguracionUsuario");
 
-                entity.HasOne(d => d.IdUsuarioNavigation)
+                entity.HasOne(d => d.Usuario)
                     .WithMany(p => p.ConfiguracionUsuarios)
                     .HasForeignKey(d => d.IdUsuario)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -54,13 +54,13 @@ namespace AppFinanzas.Models
             {
                 entity.ToTable("RolesPorUsuario");
 
-                entity.HasOne(d => d.IdRolNavigation)
+                entity.HasOne(d => d.Rol)
                     .WithMany(p => p.RolesPorUsuarios)
                     .HasForeignKey(d => d.IdRol)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_RolesPorUsuario_Rol");
 
-                entity.HasOne(d => d.IdUsuarioNavigation)
+                entity.HasOne(d => d.Usuario)
                     .WithMany(p => p.RolesPorUsuarios)
                     .HasForeignKey(d => d.IdUsuario)
                     .OnDelete(DeleteBehavior.ClientSetNull)
@@ -75,14 +75,14 @@ namespace AppFinanzas.Models
 
                 entity.Property(e => e.Fecha).HasColumnType("date");
 
-                entity.HasOne(d => d.IdCategoriaNavigation)
-                    .WithMany(p => p.Tansaccions)
+                entity.HasOne(d => d.Categoria)
+                    .WithMany(p => p.Tansacciones)
                     .HasForeignKey(d => d.IdCategoria)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Tansaccion_Categoria");
 
-                entity.HasOne(d => d.IdUsuarioNavigation)
-                    .WithMany(p => p.Tansaccions)
+                entity.HasOne(d => d.Usuario)
+                    .WithMany(p => p.Tansacciones)
                     .HasForeignKey(d => d.IdUsuario)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Tansaccion_Usuario");
