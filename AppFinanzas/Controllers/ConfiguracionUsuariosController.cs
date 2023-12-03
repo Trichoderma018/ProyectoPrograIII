@@ -58,11 +58,15 @@ namespace AppFinanzas.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,IdUsuario,LimiteGasto,NotificacionActiva")] ConfiguracionUsuario configuracionUsuario)
         {
-            if (ModelState.IsValid)
+            try
             {
                 _context.Add(configuracionUsuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
+            }
+            catch (Exception)
+            {
+                return RedirectToAction(nameof(ErrorViewModel));
             }
             ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id", configuracionUsuario.IdUsuario);
             return View(configuracionUsuario);

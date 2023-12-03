@@ -57,11 +57,15 @@ namespace AppFinanzas.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,NombreCategoria")] Categorium categorium)
         {
-            if (ModelState.IsValid)
+            try
             {
                 _context.Add(categorium);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
+            }
+            catch (Exception)
+            {
+                return RedirectToAction(nameof(ErrorViewModel));
             }
             return View(categorium);
         }

@@ -60,11 +60,15 @@ namespace AppFinanzas.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,IdUsuario,IdRol")] RolesPorUsuario rolesPorUsuario)
         {
-            if (ModelState.IsValid)
+            try
             {
                 _context.Add(rolesPorUsuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
+            }
+            catch (Exception)
+            {
+                return RedirectToAction(nameof(ErrorViewModel));
             }
             ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id", rolesPorUsuario.IdRol);
             ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id", rolesPorUsuario.IdUsuario);
