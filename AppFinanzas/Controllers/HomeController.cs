@@ -1,6 +1,7 @@
 ﻿using AppFinanzas.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace AppFinanzas.Controllers
 {
@@ -15,6 +16,15 @@ namespace AppFinanzas.Controllers
 
         public IActionResult Index()
         {
+            ClaimsPrincipal claimuser = HttpContext.User;
+            string Nombre = "";
+
+            if (claimuser.Identity.IsAuthenticated) {
+                Nombre = claimuser.Claims.Where(c=>c.Type ==ClaimTypes.Name)
+                    .Select(c=>c.Value).SingleOrDefault();
+            }
+            ViewData["Nombre"] = Nombre;
+
             return View();
         }
 
