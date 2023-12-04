@@ -16,10 +16,10 @@ namespace AppFinanzas.Controllers
         {
             _usuarioServicio = usuarioServicio;
         }
-        public Task<IActionResult> Registrarse()
+        public IActionResult Registrarse()
         {
            
-            return Task.FromResult<IActionResult>(View());
+            return View();
         }
         [HttpPost]
         public async Task<IActionResult> Registrarse(Usuario modelo)
@@ -30,7 +30,7 @@ namespace AppFinanzas.Controllers
 
             if(usuario_creado.Id > 0)
             {
-                return RedirectToAction("IniciarSesion","Inicio");
+                return RedirectToAction("InicioSesion", "Inicio");
             }
             ViewData["Mensaje"] = "No se pudo crear el usuario";
             return View();
