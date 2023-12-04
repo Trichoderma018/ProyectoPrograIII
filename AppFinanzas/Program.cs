@@ -1,5 +1,7 @@
 using AppFinanzas.Models;
 using Microsoft.EntityFrameworkCore;
+using AppFinanzas.Servicios.Contrato;
+using AppFinanzas.Servicios.Implementacion;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<FinanzasContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DbContext") ?? throw new InvalidOperationException("Connection string 'dbContext' not found.")));
 
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

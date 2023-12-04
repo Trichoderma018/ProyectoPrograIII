@@ -35,6 +35,7 @@ namespace AppFinanzas.Controllers
             }
 
             var usuario = await _context.Usuarios
+                .Include(t => t.Tansacciones) //se agrego el include para mostrar transaciones en details de usuario
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (usuario == null)
             {
