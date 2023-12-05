@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ylaIFyEYGmdfXu4gjvfJRjh93Dxorj1AY/BYzxqQKQI=",
+  "Hash": "dnGpqw2Vw86c6GKm1JBVlU8RxC00e8KIhc0NKprmDZ0=",
   "Source": "AppFinanzas",
   "BasePath": "_content/AppFinanzas",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\ProyectoPrograIII\\AppFinanzas\\wwwroot\\css\\Vapor.css",
+      "SourceId": "AppFinanzas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\ProyectoPrograIII\\AppFinanzas\\wwwroot\\",
+      "BasePath": "_content/AppFinanzas",
+      "RelativePath": "css/Vapor.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Vapor.css"
     },
     {
       "Identity": "C:\\Users\\User\\source\\repos\\ProyectoPrograIII\\AppFinanzas\\wwwroot\\favicon.ico",

@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\AppFinanzas.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\User\\source\\repos\\ProyectoPrograIII\\AppFinanzas\\wwwroot\\css\\Vapor.css",
+      "PackagePath": "staticwebassets\\css\\Vapor.css"
+    },
+    {
       "Id": "C:\\Users\\User\\source\\repos\\ProyectoPrograIII\\AppFinanzas\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

@@ -28,7 +28,39 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Contrasena)
         </dd>
+        <dd class="col-sm-10">
+            @Html.DisplayNameFor(model => model.Tansacciones)
+        </dd>
     </dl>
+</div>
+<div>
+    <h4>Transacciones de @Model.Nombre</h4>
+    @if (Model.Tansacciones.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Descripcion</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var transaccione in Model.Tansacciones)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => transaccione.Descripcion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => transaccione.Monto)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => transaccione.Fecha)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |

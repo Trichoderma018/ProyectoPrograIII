@@ -21,6 +21,17 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.LoginPath = "/Inicio/IniciarSesion";
         options.ExpireTimeSpan = TimeSpan.FromMinutes(20);
     });
+
+builder.Services.AddControllersWithViews(options =>
+{
+    options.Filters.Add(
+        new ResponseCacheAttribute
+        {
+            NoStore = true,
+            Location = ResponseCacheLocation.None,
+        }
+    );
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
