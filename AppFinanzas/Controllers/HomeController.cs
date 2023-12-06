@@ -49,5 +49,36 @@ namespace AppFinanzas.Controllers
 
             return RedirectToAction("IniciarSesion", "Inicio");
         }
+
+        //[Authorize(Roles = "Administrador")]
+        public IActionResult Categoriums()
+        {
+            return View();
+        }
+        //[Authorize(Roles = "Administrador")]
+        public IActionResult ConfiguracionUsuarios()
+        {
+            return View();
+        }
+        //[Authorize(Roles = "Administrador")]
+        public IActionResult Roles()
+        {
+            return View();
+        }
+        //[Authorize(Roles = "Administrador")]
+        public IActionResult RolesPorUsuarios()
+        {
+            return View();
+        }
+
+        public IActionResult Tansacciones()
+        {
+            return View();
+        }
+
+        public IActionResult Usuarios()
+        {
+            return View();
+        }
     }
 }

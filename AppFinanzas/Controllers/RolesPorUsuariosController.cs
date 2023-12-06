@@ -48,8 +48,8 @@ namespace AppFinanzas.Controllers
         // GET: RolesPorUsuarios/Create
         public IActionResult Create()
         {
-            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id");
-            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id");
+            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "NombreRol");
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Nombre");
             return View();
         }
 
@@ -88,8 +88,8 @@ namespace AppFinanzas.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id", rolesPorUsuario.IdRol);
-            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id", rolesPorUsuario.IdUsuario);
+            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "NombreRol", rolesPorUsuario.IdRol);
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Nombre", rolesPorUsuario.IdUsuario);
             return View(rolesPorUsuario);
         }
 
@@ -125,8 +125,8 @@ namespace AppFinanzas.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "Id", rolesPorUsuario.IdRol);
-            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id", rolesPorUsuario.IdUsuario);
+            ViewData["IdRol"] = new SelectList(_context.Rols, "Id", "NombreRol", rolesPorUsuario.IdRol);
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Nombre", rolesPorUsuario.IdUsuario);
             return View(rolesPorUsuario);
         }
 

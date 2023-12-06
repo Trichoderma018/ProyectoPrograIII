@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using AppFinanzas.Models;
 
+
 namespace AppFinanzas.Controllers
 {
     public class ConfiguracionUsuariosController : Controller
