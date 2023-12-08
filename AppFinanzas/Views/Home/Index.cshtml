@@ -1,8 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome @ViewData["Nombre"]</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<style>
+    .cuadro-centrado {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30vh; /* ajusta la altura al 100% de la ventana del navegador */
+    }
+</style>
+<div class="container-fluid cuadro-centrado">
+    <h1 class="display-4">¡Te damos la Bienvenida @ViewData["Nombre"]!</h1>
 </div>
