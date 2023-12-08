@@ -22,7 +22,7 @@
 <body>
     <div class="container-fluid cuadro-centrado">
         <div class="col-12 col-xl-4 col-md-6">
-            <div class="card">
+            <div class="card border-primary mb-3" style="max-width: 25rem;">
                 <div class="card-header">
                     Registrate
                 </div>
@@ -33,7 +33,7 @@
                         <input class="form-control mb-3" type="text" placeholder="Correo" required name="Correo" />
                         <input class="form-control mb-3" type="password" placeholder="Contraseña" required name="Contrasena" />
                         <div class="d-grid gap-2 mb-3">
-                            <button class="btn btn-primary" type="submit">Registrate</button>
+                            <button class="btn btn-outline-success" type="submit">Registrate</button>
                         </div>
                         @if (ViewData["Mensaje"] != null)
                         {
