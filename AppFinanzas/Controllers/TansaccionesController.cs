@@ -48,8 +48,8 @@ namespace AppFinanzas.Controllers
         // GET: Tansacciones/Create
         public IActionResult Create()
         {
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Id");
-            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id");
+            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "NombreCategoria");
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Nombre");
             return View();
         }
 
@@ -88,8 +88,8 @@ namespace AppFinanzas.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Id", tansaccion.IdCategoria);
-            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id", tansaccion.IdUsuario);
+            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "NombreCategoria", tansaccion.IdCategoria);
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Nombre", tansaccion.IdUsuario);
             return View(tansaccion);
         }
 
