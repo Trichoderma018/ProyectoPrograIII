@@ -6,25 +6,26 @@
 
 <h1>Create</h1>
 
-<h4>ConfiguracionUsuario</h4>
+<h4>Configuracion de Usuario</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="IdUsuario" class="control-label"></label>
+                <label asp-for="IdUsuario" class="control-label">Nombre</label>
                 <select asp-for="IdUsuario" class ="form-control" asp-items="ViewBag.IdUsuario"></select>
             </div>
             <div class="form-group">
-                <label asp-for="LimiteGasto" class="control-label"></label>
+                <label asp-for="LimiteGasto" class="control-label">Limite de Gasto</label>
                 <input asp-for="LimiteGasto" class="form-control" />
                 <span asp-validation-for="LimiteGasto" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="NotificacionActiva" /> @Html.DisplayNameFor(model => model.NotificacionActiva)
+                    Notificación Activa
                 </label>
+                <input class="form-check-input" asp-for="NotificacionActiva" />
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

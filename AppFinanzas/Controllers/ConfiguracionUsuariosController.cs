@@ -48,7 +48,7 @@ namespace AppFinanzas.Controllers
         // GET: ConfiguracionUsuarios/Create
         public IActionResult Create()
         {
-            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id");
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Nombre");
             return View();
         }
 
@@ -86,7 +86,7 @@ namespace AppFinanzas.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id", configuracionUsuario.IdUsuario);
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Nombre", configuracionUsuario.IdUsuario);
             return View(configuracionUsuario);
         }
 
@@ -122,7 +122,7 @@ namespace AppFinanzas.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id", configuracionUsuario.IdUsuario);
+            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Nombre", configuracionUsuario.IdUsuario);
             return View(configuracionUsuario);
         }
 
