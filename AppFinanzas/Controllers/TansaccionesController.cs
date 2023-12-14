@@ -22,9 +22,10 @@ namespace AppFinanzas.Controllers
         public async Task<IActionResult> Index()
         {
             var finanzasContext = _context.Tansaccions.Include(t => t.Categoria).Include(t => t.Usuario);
+            TempData["Mensaje"] = "Has alcanzado el monto limite";
             return View(await finanzasContext.ToListAsync());
-        }
 
+        }
         // GET: Tansacciones/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -70,9 +71,6 @@ namespace AppFinanzas.Controllers
             {
                 return RedirectToAction(nameof(ErrorViewModel));
             }
-            ViewData["IdCategoria"] = new SelectList(_context.Categoria, "Id", "Id", tansaccion.IdCategoria);
-            ViewData["IdUsuario"] = new SelectList(_context.Usuarios, "Id", "Id", tansaccion.IdUsuario);
-            return View(tansaccion);
         }
 
         // GET: Tansacciones/Edit/5

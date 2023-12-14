@@ -1,0 +1,17 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Contador de Sumas con Límite";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>Suma actual: @Model.SumaActual</p>
+<p>Contador final: @Model.ContadorFinal</p>
+
+@if (!string.IsNullOrEmpty(ViewBag.MensajeLimite))
+{
+    <p>@ViewBag.MensajeLimite</p>
+}

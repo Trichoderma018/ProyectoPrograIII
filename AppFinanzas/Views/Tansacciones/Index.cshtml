@@ -57,3 +57,9 @@
 }
     </tbody>
 </table>
+@if (TempData["Mensaje"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["Mensaje"]
+    </div>
+}
