@@ -30,7 +30,7 @@ namespace AppFinanzas.Controllers
 
             if(usuario_creado.Id > 0)
             {
-                return RedirectToAction("InicioSesion", "Inicio");
+                return RedirectToAction("IniciarSesion", "Inicio");
             }
             ViewData["Mensaje"] = "No se pudo crear el usuario";
             return View();
